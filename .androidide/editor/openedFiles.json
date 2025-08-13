@@ -1,0 +1,20 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/BL Unlock Permission/app/src/main/res/values/strings.xml",
+      "selection": {
+        "end": {
+          "column": 53,
+          "index": 104,
+          "line": 2
+        },
+        "start": {
+          "column": 53,
+          "index": 104,
+          "line": 2
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/BL Unlock Permission/app/src/main/res/values/strings.xml"
+}

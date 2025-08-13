@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- App Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="HyperOS Unlock Tool"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="by RenskyLab"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />   <TextView
+        android:id="@+id/clockTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="monospace"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        tools:text="15:53:27.123" />
+
+    <!-- Card for user controls (cookie and buttons) -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Using TextInputLayout for a better-looking text field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:hint="Xiaomi Account Cookie">
+
+                <!-- The ID remains the same, so no Java changes are needed -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cookieEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="3"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Horizontal container for the two buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <!-- Using MaterialButton for better styling -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/scheduledToggleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Start Scheduled" />
+
+                <!-- Outlined style for the secondary action button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/manualToggleButton"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Start Manual" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Title for the logs section -->
+    <TextView
+    
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="Live Logs"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"/>
+
+    <!-- The ScrollView now has a card background -->
+    <com.google.android.material.card.MaterialCardView
+        
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:strokeColor="?attr/colorOutline"
+        app:strokeWidth="1dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="12dp">
+
+        <ScrollView
+            android:id="@+id/logScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Using a monospace font for better log readability -->
+            <TextView
+                android:id="@+id/logTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:textIsSelectable="true"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:fontFamily="monospace"
+                tools:text="Logs will appear here...\n[15:47:10.289] Sending request...\n❌ FAILED - Permission not granted." />
+
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
