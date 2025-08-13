@@ -14,7 +14,6 @@ This tool is intended for research, educational, and personal development purpos
 ### Prerequisites
 - **AndroidIDE** installed on your Android device.
 - **Git** configured with your name and email.
-- An empty folder or existing Git repository.
 
 ### Installation
 1. Clone this repository:
